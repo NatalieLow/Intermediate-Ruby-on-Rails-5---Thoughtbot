@@ -1,1 +1,10 @@
 <h1>Dashboard</h1>
+
+<%= render partial: '/dashboards/form' %>
+
+<% @shouts.each do |shout| %>
+	<div>
+		<%= shout.body %>
+	</div>
+<% end %>
+
