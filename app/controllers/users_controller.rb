@@ -4,9 +4,10 @@ class UsersController < Clearance::UsersController
 		@user = User.new
 	end
 
-	# def show
-	# 	@user = User.find(params[:id])
-	# end
+	def show
+		@user = User.find(params[:id])
+		@shouts = @user.shouts.order("created_at DESC") 
+	end
 
 	private
 
