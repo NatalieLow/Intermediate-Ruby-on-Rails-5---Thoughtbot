@@ -3,4 +3,8 @@
 <h1><%= @user.username %></h1>
 <%= follow_button @user %>
 
+<%#= "followers: #{ @user.followers_count } following: #{ @user.followed_users_count}" %>
+
+<%= link_to "Followers", user_followers_path(@user) %>
+
 <%= render @shouts %>
