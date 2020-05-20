@@ -6,7 +6,7 @@ class UsersController < Clearance::UsersController
 
 	def show
 		@user = User.find_by(username: params[:id])
-		@shouts = @user.shouts.order("created_at DESC") 
+		@timeline = Timeline.new([@user])
 	end
 
 	private
@@ -15,5 +15,5 @@ class UsersController < Clearance::UsersController
 		params
 		.require(:user)
 		.permit(:username, :email, :password)
-	end	
+	end
  end
